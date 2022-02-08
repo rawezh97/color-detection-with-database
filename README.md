@@ -2,7 +2,7 @@
 Color Detection
 
 
-..........................................Color-Detection..................................................................
+.......................................... Color-Detection ..................................................................
 
 Thanks for god finaly done 
 
@@ -20,7 +20,7 @@ And you shuld good to go
 dont forget you must chnage the connection with the server on the code
 and you must change path to your file (in code i explained this)
 
-...................................this project will be update insha3ala.................................................
+................................... this project will be update insha3ala .................................................
 
 
 
