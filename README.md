@@ -8,6 +8,8 @@ Thanks for god finaly done
 
 -this Program must be useing with python 3.9 or erliaer
 
+Usage on Windows :
+
 Open cmd (command prompt)
 - first you must install pyodbc ( pip install pyodbc)
 - pip install opencv-python
