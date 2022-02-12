@@ -20,7 +20,7 @@ max_HSV = np.array([135 , 255 , 255])
 #if you don't want use your webcam and you want use your own video you can do like This
 #change the 0 to "path your video"
 #for example  video_capture = cv2.VideoCapture("my_video.mp4")
-video_capture = cv2.VideoCapture(0)
+video_capture = cv2.VideoCapture("Rubik.mp4")
 
 #we need thi tow variables to go with the flow(-_-)
 count_frame = 0
