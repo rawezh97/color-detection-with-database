@@ -6,7 +6,7 @@ import os
 
 #This Program must be using with python3.9.7 or earlier
 #                           in here you must change (Server=your Server name; Database=your database name)
-connection = pyodbc.connect('Driver={SQL server};Server=DESKTOP-35T9TTP;Database=rawezh;Trusted_Connection=yes;')
+connection = pyodbc.connect('Driver={SQL server};Server=DESKTOP-34E9PTT;Database=rawezh;Trusted_Connection=yes;')
 dbfunction = connection.cursor()
 
 # 95 in min_HSV and 135 in max_HSV is a Hue (color it self) you can change for anithing you want
