@@ -11,6 +11,7 @@ Thanks for god finaly done
 Usage on Windows :
 
 Open cmd (command prompt)
+
 - first you must install pyodbc ( pip install pyodbc)
 - pip install opencv-python
 - pip install numpy
