@@ -43,7 +43,7 @@ connection = pyodbc.connect('''
 				Server=DESKTOP-25E9PTT;
 				Database=colorDB;
 				UID = your-username;
-        PWD = your-password;
+        			PWD = your-password;
 				''')
 ```
 
