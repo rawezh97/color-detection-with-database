@@ -143,17 +143,14 @@ while True:
 				else :
 					continue
 
-
 	# we need this founction to pop up the wendow on the screen
 	# ("mask") it is just a name of wendow you can change to anything you want
 	#( "video" , frame ) "video" is also a name but frame and mask in here that variable we decleared in line (36,47)
 	cv2.imshow("mask" , mask)
 	cv2.imshow("video" , frame)
 
-
 	# in here we want by defult program work if we press the up navebar the programm will be end
 	# you can change cv2.waitKey(0) in this case program will work when you press a key on your keyboard
-	key = cv2.waitKey(1)
-	if key == 0 :
+	if cv2.waitKey(1) & 0xFF == ord('q'):
 		dbfunction.close()
 		break
