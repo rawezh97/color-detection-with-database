@@ -1,5 +1,5 @@
 # Deep_learning_color_detection_connect_with_database
-.......................................... Color-Detection ..................................................................
+
 
 
 # Color Detection
