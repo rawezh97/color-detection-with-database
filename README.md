@@ -72,7 +72,7 @@ max_HSV = np.array([135 , 255 , 255])
 ***For Example***  
 if we want detect the **green** color we must do like tis  
 ```
-min_HSV = np.array([55 , 150 , 55])  
+min_HSV = np.array([50 , 150 , 55])  
 max_HSV = np.array([65 , 255 , 255])  
 ```
 ![HSV](https://user-images.githubusercontent.com/92225352/181918103-b4f39751-f5d7-4cad-a524-8d1f1943d495.png)
