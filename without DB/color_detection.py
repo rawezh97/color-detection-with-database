@@ -1,6 +1,5 @@
 from datetime import datetime
 import numpy as np #pip install numpy
-import pyodbc #pip install pyodbc
 import cv2 #pip install opencv-python
 import os
 
