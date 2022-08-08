@@ -1,10 +1,8 @@
-#!/usr/bin/python3
 from datetime import datetime
 import numpy as np #pip install numpy
 import sqlite3
 import cv2 #pip install opencv-python
 import os
-from datetime import datetime
 
 
 connection = sqlite3.connect("color_detection.db" , check_same_thread=False)
@@ -26,9 +24,12 @@ max_HSV = np.array([135 , 255 , 255])
 video_capture = cv2.VideoCapture(0)
 
 #we need thi tow variables to go with the flow(-_-)
+sql = "select max(id) from image"
+last_id = data.execute(sql)
+for i in last_id :
+	id = i[0]
 count_frame = 0
 rise = 34
-id=0
 # video work with a frame, one video have a lot of frame which make a video show
 # that is why we need a ( while loop ) because we work with every single frame one by one
 # if you want to be better on it check this out https://www.youtube.com/watch?v=dEtiNxlTJ8I
@@ -93,6 +94,7 @@ while True:
 				# (x,y) is a x , y of object on the frame (top of left)
 				# (x+w , y+h) is that point rectangle is done (bottom of right)
 				cv2.rectangle(frame , (x,y) , (x +w , y+h) ,(0 , 200 , 0) , 5)
+				#cv2.putText(frame ,str(count_frame) ,(3 , 80 ), cv2.FONT_HERSHEY_DUPLEX, 1.0 , (0,0,0) , 1)
 
 				# if we dont put on the condition on this capture image then the program send a lot of unless data to Database
 				# we want take a picture evry 25 frame taht is nearle about 1 secound  that is meant evry secound we take a pictre of our target we pass through around
@@ -108,40 +110,30 @@ while True:
 					name=str(w+h+x) + '_oject.jpg'
 					## this function save image on that folder your python file is
 					saving= cv2.imwrite(name, capture)
+
 					local_time = datetime.now()
 					date = local_time.strftime("%d/%m/%Y")
 					time = local_time.strftime("%H:%M:%S")
+
 					file = open(name , "rb")
 					image_content = file.read()
+
 					sql = "insert into image values(?,?,?,?,?)"
 					list = [id,name,date,time,image_content]
-					#list.append(id)
-					#list.append(name)
-					#list.append(date)
-					#list.append(time)
-					#list.append(image_content)
 					data.execute(sql,list)
 					connection.commit()
 					os.remove(name)
 
-
-
-
 					# if frame == 34 ; want to add 34 to the rise because we want after 34 frame later just capture one image about 1 secound
 					rise += 34
-
 				# we want continue with other frame without capture anything
 				else :
 					continue
-
-
 	# we need this founction to pop up the wendow on the screen
 	# ("mask") it is just a name of wendow you can change to anything you want
 	#( "video" , frame ) "video" is also a name but frame and mask in here that variable we decleared in line (36,47)
 	cv2.imshow("mask" , mask)
 	cv2.imshow("video" , frame)
-
-
 	# in here we want by defult program work if we press the up navebar the programm will be end
 	# you can change cv2.waitKey(0) in this case program will work when you press a key on your keyboard
 	if cv2.waitKey(1) & 0xFF == ord('q'):
