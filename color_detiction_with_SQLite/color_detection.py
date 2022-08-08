@@ -28,7 +28,7 @@ video_capture = cv2.VideoCapture(0)
 #we need thi tow variables to go with the flow(-_-)
 count_frame = 0
 rise = 34
-
+id=0
 # video work with a frame, one video have a lot of frame which make a video show
 # that is why we need a ( while loop ) because we work with every single frame one by one
 # if you want to be better on it check this out https://www.youtube.com/watch?v=dEtiNxlTJ8I
@@ -100,26 +100,29 @@ while True:
 				if count_frame == rise :
 					print ("Sucsess")
 
+					id += 1
+
 					# capture image
 					capture = frame[y:y + h, x:x + w]
-					# we try to make a uniqe name for ech object by this function
+					## we try to make a uniqe name for ech object by this function
 					name=str(w+h+x) + '_oject.jpg'
-					# this function save image on that folder your python file is
+					## this function save image on that folder your python file is
 					saving= cv2.imwrite(name, capture)
-                    local_time = datetime.now()
-                    date = local_time.strftime("%d/%m/%Y")
-                    time = local_time.strftime("%H:%M:%S")
-                    file = open(name , "rb")
-                    image_content = file.read()
-                    sql = "insert into image values(?,?,?,?)"
-                    list = []
-                    list.append(name)
-                    list.append(date)
-                    list.append(time)
-                    list.append(image_content)
-                    data.execute(sql,list)
-                    connection.commit()
-                    os.remove(name)
+					local_time = datetime.now()
+					date = local_time.strftime("%d/%m/%Y")
+					time = local_time.strftime("%H:%M:%S")
+					file = open(name , "rb")
+					image_content = file.read()
+					sql = "insert into image values(?,?,?,?,?)"
+					list = [id,name,date,time,image_content]
+					#list.append(id)
+					#list.append(name)
+					#list.append(date)
+					#list.append(time)
+					#list.append(image_content)
+					data.execute(sql,list)
+					connection.commit()
+					os.remove(name)
 
 
 
