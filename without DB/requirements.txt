@@ -1,3 +1,2 @@
-pip install pyodbc
 pip install opencv-python
 pip install numpy
