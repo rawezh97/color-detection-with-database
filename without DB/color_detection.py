@@ -8,8 +8,35 @@ import os
 # 200 and 255 of both is a Saturation
 # last 55 and 255 is a value
 # for understand this search it for { hsv color }
-min_HSV = np.array([95 , 200 , 55])
-max_HSV = np.array([135 , 255 , 255])
+
+
+
+
+def trackbar(para):
+	global hue_low , hue_high , satur_low , satur_high , value_low , value_high
+	hue_low = cv2.getTrackbarPos('hue_low' , 'controls')
+	hue_high = cv2.getTrackbarPos('hue_high' , 'controls')
+	satur_low = cv2.getTrackbarPos('satur_low' , 'controls')
+	satur_high = cv2.getTrackbarPos('satur_high' , 'controls')
+	value_low = cv2.getTrackbarPos('value_low' , 'controls')
+	value_high = cv2.getTrackbarPos('value_high' , 'controls')
+
+
+hue_low = 0
+hue_high = 180
+satur_low = 0
+satur_high = 255
+value_low = 0
+value_high = 255
+
+controls = cv2.namedWindow('controls' ,  cv2.WINDOW_AUTOSIZE)
+
+cv2.createTrackbar('hue_low' , 'controls' , 95,180 , trackbar)
+cv2.createTrackbar('hue_high' , 'controls' , 135,180 , trackbar)
+cv2.createTrackbar('satur_low' , 'controls' , 200,255 , trackbar)
+cv2.createTrackbar('satur_high' , 'controls' , 255,255 , trackbar)
+cv2.createTrackbar('value_low' , 'controls' , 55,255 , trackbar)
+cv2.createTrackbar('value_high' , 'controls' , 255,255 , trackbar)
 
 # in here we capture the video
 #if you don't want use your webcam and you want use your own video you can do like This
@@ -34,6 +61,9 @@ while True:
 	# we don't want this program is be stoped we want continue for this moment
 	if not boleean:
 		continue
+		
+	min_HSV = np.array([hue_low , satur_low , value_low])
+	max_HSV = np.array([hue_high , satur_high , value_high])
 
 	# we change the BGR type of color to HSV type on every single frame
 	image = cv2.cvtColor(frame , cv2.COLOR_BGR2HSV)
