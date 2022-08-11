@@ -14,6 +14,38 @@ connection = pyodbc.connect('''
 				''')
 dbfunction = connection.cursor()
 
+
+
+def trackbar(para):
+	global hue_low , hue_high , satur_low , satur_high , value_low , value_high
+	hue_low = cv2.getTrackbarPos('hue_low' , 'controls')
+	hue_high = cv2.getTrackbarPos('hue_high' , 'controls')
+	satur_low = cv2.getTrackbarPos('satur_low' , 'controls')
+	satur_high = cv2.getTrackbarPos('satur_high' , 'controls')
+	value_low = cv2.getTrackbarPos('value_low' , 'controls')
+	value_high = cv2.getTrackbarPos('value_high' , 'controls')
+
+
+hue_low = 0
+hue_high = 180
+satur_low = 0
+satur_high = 255
+value_low = 0
+value_high = 255
+
+
+controls = cv2.namedWindow('controls' ,  cv2.WINDOW_AUTOSIZE)
+
+cv2.createTrackbar('hue_low' , 'controls' , 95,180 , trackbar)
+cv2.createTrackbar('hue_high' , 'controls' , 135,180 , trackbar)
+cv2.createTrackbar('satur_low' , 'controls' , 200,255 , trackbar)
+cv2.createTrackbar('satur_high' , 'controls' , 255,255 , trackbar)
+cv2.createTrackbar('value_low' , 'controls' , 55,255 , trackbar)
+cv2.createTrackbar('value_high' , 'controls' , 255,255 , trackbar)
+
+
+
+
 # 95 in min_HSV and 135 in max_HSV is a Hue (color it self) you can change for anithing you want
 # 200 and 255 of both is a Saturation
 # last 55 and 255 is a value
