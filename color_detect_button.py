@@ -130,20 +130,8 @@ while True:
                 cv2.rectangle(frame , (x,y) , (x +w , y+h) ,(0 , 200 , 0) , 5)
                     #cv2.putText(frame ,str(count_frame) ,(3 , 80 ), cv2.FONT_HERSHEY_DUPLEX, 1.0 , (0,0,0) , 1)
 
-
-
-
-
-
-
-
-
-
     cv2.imshow('screen', frame)
     cv2.imshow('image' , mask)
-
-
-
 
 
 
