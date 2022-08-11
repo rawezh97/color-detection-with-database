@@ -6,6 +6,8 @@ import os
 
 #This Program must be using with python3.9.7 or earlier
 #                           in here you must change (Server=your Server name; Database=your database name)
+
+#create a trackbr to make hsv changeable
 connection = pyodbc.connect('''
 				Driver={SQL server};
 				Server=DESKTOP-25E9PTT;
@@ -50,8 +52,7 @@ cv2.createTrackbar('value_high' , 'controls' , 255,255 , trackbar)
 # 200 and 255 of both is a Saturation
 # last 55 and 255 is a value
 # for understand this search it for { hsv color }
-min_HSV = np.array([95 , 200 , 55])
-max_HSV = np.array([135 , 255 , 255])
+
 
 # in here we capture the video
 #if you don't want use your webcam and you want use your own video you can do like This
@@ -76,7 +77,8 @@ while True:
 	# we don't want this program is be stoped we want continue for this moment
 	if not boleean:
 		continue
-
+	min_HSV = np.array([hue_low , satur_low , value_low])
+	max_HSV = np.array([hue_high , satur_high , value_high])
 	# we change the BGR type of color to HSV type on every single frame
 	image = cv2.cvtColor(frame , cv2.COLOR_BGR2HSV)
 
