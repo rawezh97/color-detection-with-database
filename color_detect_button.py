@@ -64,10 +64,10 @@ while True:
         cvui.init('screen')
         hue_low = 95
         hue_high = 135
-        satur_low = 100
+        satur_low = 200
         satur_high = 255
         value_low = 55
-        value_high = 207
+        value_high = 255
 
     min_HSV = np.array([hue_low , satur_low , value_low])
     max_HSV = np.array([hue_high , satur_high , value_high])
