@@ -54,11 +54,11 @@ while True:
     if (cvui.button(frame, width - 100, height - 40, "RED") and cvui.mouse(cvui.CLICK)):
         cvui.init('screen')
         hue_low = 0
-        hue_high = 13
-        satur_low = 149
+        hue_high = 180
+        satur_low = 117
         satur_high = 255
-        value_low = 129
-        value_high = 207
+        value_low = 55
+        value_high = 255
 
     if (cvui.button(frame, width - 200, height - 40, "Blue") and cvui.mouse(cvui.CLICK)):
         cvui.init('screen')
