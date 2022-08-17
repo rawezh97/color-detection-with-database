@@ -131,6 +131,11 @@ while True:
 				if count_frame == rise :
 					print ("Sucsess")
 
+					query = "select max(id) from image"
+					last_id = data.execute(query)
+					for i in last_id:
+						id = i[0]
+					# capture image
 					id += 1
 
 					# capture image
