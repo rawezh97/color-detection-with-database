@@ -24,6 +24,11 @@ if not download from here [SQL Server](https://www.microsoft.com/en-us/sql-serve
  pip install numpy
  ```
  
+ # without DB 
+ you can run the code with out take a picture and connect with the database
+ 
+ # color_detection_with_SQLite
+ you can use this file that already have the SQLite database on it
 
 # color_detection_button
 in this part you can use the button to change the value of hsv  
