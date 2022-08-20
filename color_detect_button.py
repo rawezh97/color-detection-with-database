@@ -19,7 +19,6 @@ satur_high = 255
 value_low = 0
 value_high = 255
 
-
 controls = cv2.namedWindow('controls' ,  cv2.WINDOW_AUTOSIZE)
 
 cv2.createTrackbar('hue_low' , 'controls' , 95,180 , trackbar)
@@ -28,7 +27,6 @@ cv2.createTrackbar('satur_low' , 'controls' , 200,255 , trackbar)
 cv2.createTrackbar('satur_high' , 'controls' , 255,255 , trackbar)
 cv2.createTrackbar('value_low' , 'controls' , 55,255 , trackbar)
 cv2.createTrackbar('value_high' , 'controls' , 255,255 , trackbar)
-
 
 
 width = 800
