@@ -11,7 +11,6 @@ import os
 
 
 
-
 def trackbar(para):
 	global hue_low , hue_high , satur_low , satur_high , value_low , value_high
 	hue_low = cv2.getTrackbarPos('hue_low' , 'controls')
