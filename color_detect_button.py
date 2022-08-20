@@ -119,8 +119,6 @@ while True:
     cv2.imshow('screen', frame)
     cv2.imshow('image' , mask)
 
-
-
     if cv2.waitKey(1) & 0xFF == ord('q'):
         cv2.destroyAllWindows()
         break
