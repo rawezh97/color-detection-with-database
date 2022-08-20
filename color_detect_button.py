@@ -2,7 +2,6 @@ import numpy as np
 import cvui
 import cv2
 
-
 #create the trackbar to make change in hsv
 def trackbar(para):
 	global hue_low , hue_high , satur_low , satur_high , value_low , value_high
@@ -12,7 +11,6 @@ def trackbar(para):
 	satur_high = cv2.getTrackbarPos('satur_high' , 'controls')
 	value_low = cv2.getTrackbarPos('value_low' , 'controls')
 	value_high = cv2.getTrackbarPos('value_high' , 'controls')
-
 
 hue_low = 0
 hue_high = 180
