@@ -28,7 +28,6 @@ cv2.createTrackbar('satur_high' , 'controls' , 255,255 , trackbar)
 cv2.createTrackbar('value_low' , 'controls' , 55,255 , trackbar)
 cv2.createTrackbar('value_high' , 'controls' , 255,255 , trackbar)
 
-
 width = 800
 height = 480
 cam_no = 1
