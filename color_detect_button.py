@@ -88,7 +88,6 @@ while True:
 
     			#this founction contour area to the object
             area = cv2.contourArea(i)
-
     			# we don't want detect evry single object in this case we work on (rubick's cube)
     			# that is why we use 800 if you work with a bigger thing you can rise the number 800 to the waht you want
             if area > 800 :
@@ -103,7 +102,6 @@ while True:
                 g = int(( y + y + h ) / 2)
 
                     # if you want see the evry single change of x,y,w,h of object do this > print(detect)
-
                     # this founction make a red point on the object
                     # (f,g) our to variable and condition and the 5 (0,0,255) is a Blue,Green,Reed
                     # and you can change the 5 and -1 and see what is it do
