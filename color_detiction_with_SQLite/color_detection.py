@@ -139,6 +139,8 @@ while True:
 					id += 1
 
 					# capture image
+					#newImage = image[startY+2:endY-2, startX+2:endX-2]
+					#cv2.imwrite("takecapture.jpg", newImage)
 					capture = frame[y:y + h, x:x + w]
 					## we try to make a uniqe name for ech object by this function
 					name=str(w+h+x) + '_oject.jpg'
