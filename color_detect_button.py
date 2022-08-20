@@ -70,7 +70,6 @@ while True:
     mask = cv2.inRange(image , min_HSV , max_HSV)
     res = cv2.bitwise_and(frame, frame, mask=mask)
 
-
         # Note : this to variable over uesing to show and pop up to the screen
         # we use { imshow } founction to pop up the new wendow of our vraiable
         # if you don't got it check line (144)
