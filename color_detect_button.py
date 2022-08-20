@@ -51,15 +51,6 @@ while True:
     frame = cv2.resize(current_cam, dim, interpolation=cv2.INTER_AREA)
     cv2.namedWindow('screen', cv2.WINDOW_NORMAL)
     cv2.setWindowProperty('screen', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
-    if (cvui.button(frame, width - 100, height - 40, "RED") and cvui.mouse(cvui.CLICK)):
-        cvui.init('screen')
-        hue_low = 0
-        hue_high = 180
-        satur_low = 117
-        satur_high = 255
-        value_low = 55
-        value_high = 255
-
     if (cvui.button(frame, width - 200, height - 40, "Blue") and cvui.mouse(cvui.CLICK)):
         cvui.init('screen')
         hue_low = 95
@@ -68,7 +59,7 @@ while True:
         satur_high = 255
         value_low = 55
         value_high = 255
-
+	
     min_HSV = np.array([hue_low , satur_low , value_low])
     max_HSV = np.array([hue_high , satur_high , value_high])
 
